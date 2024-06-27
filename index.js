@@ -15,7 +15,7 @@ while (true) {
     triangulo.ladoDois = +prompt('Digite em metros o tamanho do segundo lado do triângulo: ');
     triangulo.ladoTres = +prompt('Digite em metros o tamanho do terceiro lado do triângulo: ');
 
-    if (triangulo.ladoUm > 0 && triangulo.ladoDois > 0 && triangulo.ladoTres > 0 && triangulo.ladoUm + triangulo.ladoDois > triangulo.ladoTres && triangulo.ladoDois + triangulo.ladoTres > triangulo.ladoUm && triangulo.ladoTres + triangulo.ladoUm > triangulo.ladoDois) {
+    if (triangulo.ladoUm > 0 && triangulo.ladoDois > 0 && triangulo.ladoTres > 0 && triangulo.ladoUm + triangulo.ladoDois > triangulo.ladoTres || triangulo.ladoDois + triangulo.ladoTres > triangulo.ladoUm || triangulo.ladoTres + triangulo.ladoUm > triangulo.ladoDois) {
         console.log('Triângulo válido.');
         if (triangulo.ladoUm == triangulo.ladoDois && triangulo.ladoDois == triangulo.ladoTres) {
             equilatero.push(triangulo);
@@ -24,7 +24,7 @@ while (true) {
                 ladoDois: '',
                 ladoTres: ''
             };
-        } else if (triangulo.ladoUm != triangulo.ladoDois && triangulo.ladoDois != triangulo.ladoTres) {
+        } else if (triangulo.ladoUm != triangulo.ladoDois && triangulo.ladoDois != triangulo.ladoTres && triangulo.ladoTres != triangulo.ladoUm) {
             escaleno.push(triangulo);
             triangulo = {
                 ladoUm: '',
