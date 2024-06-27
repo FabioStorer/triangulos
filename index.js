@@ -9,6 +9,8 @@ let triangulo = {
 };
 
 console.log('Olá. Vamos cadastrar triângulos e classificá-los baseado no tamanho de seus lados.');
+
+while (true) {
 triangulo.ladoUm = +prompt('Digite em metros o tamanho do primeiro lado do triângulo: ');
 triangulo.ladoDois = +prompt('Digite em metros o tamanho do segundo lado do triângulo: ');
 triangulo.ladoTres = +prompt('Digite em metros o tamanho do terceiro lado do triângulo: ');
@@ -40,3 +42,10 @@ console.log(triangulo);
 console.log('Aqui estão todos os triângulos equiláteros cadastrados: ', equilatero);
 console.log('Aqui estão todos os triângulos isósceles cadastrados: ', isosceles);
 console.log('Aqui estão todos os triângulos escalenos cadastrados: ', escaleno);
+
+let input = prompt('Se deseja continuar, aperte a tecla ENTER. Caso deseje encerrar o cadastro basta digitar "Sair": ');
+
+if (input == 'Sair') {
+    process.exit();
+}
+}
