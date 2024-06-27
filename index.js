@@ -11,41 +11,40 @@ let triangulo = {
 console.log('Olá. Vamos cadastrar triângulos e classificá-los baseado no tamanho de seus lados.');
 
 while (true) {
-triangulo.ladoUm = +prompt('Digite em metros o tamanho do primeiro lado do triângulo: ');
-triangulo.ladoDois = +prompt('Digite em metros o tamanho do segundo lado do triângulo: ');
-triangulo.ladoTres = +prompt('Digite em metros o tamanho do terceiro lado do triângulo: ');
+    triangulo.ladoUm = +prompt('Digite em metros o tamanho do primeiro lado do triângulo: ');
+    triangulo.ladoDois = +prompt('Digite em metros o tamanho do segundo lado do triângulo: ');
+    triangulo.ladoTres = +prompt('Digite em metros o tamanho do terceiro lado do triângulo: ');
 
-if (triangulo.ladoUm == triangulo.ladoDois && triangulo.ladoDois == triangulo.ladoTres) {
-    equilatero.push(triangulo);
-    triangulo = {
-        ladoUm: '',
-        ladoDois: '',
-        ladoTres: ''
-    };
-} else if ((triangulo.ladoUm == triangulo.ladoDois && triangulo.ladoDois != triangulo.ladoTres) || (triangulo.ladoUm != triangulo.ladoDois && triangulo.ladoDois == triangulo.ladoTres) || (triangulo.ladoUm == triangulo.ladoTres && triangulo.ladoTres != triangulo.ladoDois)) {
-    isosceles.push(triangulo);
-    triangulo = {
-        ladoUm: '',
-        ladoDois: '',
-        ladoTres: ''
-    };
-} else if (triangulo.ladoUm != triangulo.ladoDois && triangulo.ladoDois != triangulo.ladoTres) {
-    escaleno.push(triangulo);
-    triangulo = {
-        ladoUm: '',
-        ladoDois: '',
-        ladoTres: ''
-    };
-}
+    if (triangulo.ladoUm == triangulo.ladoDois && triangulo.ladoDois == triangulo.ladoTres) {
+        equilatero.push(triangulo);
+        triangulo = {
+            ladoUm: '',
+            ladoDois: '',
+            ladoTres: ''
+        };
+    } else if (triangulo.ladoUm != triangulo.ladoDois && triangulo.ladoDois != triangulo.ladoTres) {
+        escaleno.push(triangulo);
+        triangulo = {
+            ladoUm: '',
+            ladoDois: '',
+            ladoTres: ''
+        };
+    } else {
+        isosceles.push(triangulo);
+        triangulo = {
+            ladoUm: '',
+            ladoDois: '',
+            ladoTres: ''
+        };
+    }
+    console.log(triangulo);
+    console.log('Aqui estão todos os triângulos equiláteros cadastrados: ', equilatero);
+    console.log('Aqui estão todos os triângulos isósceles cadastrados: ', isosceles);
+    console.log('Aqui estão todos os triângulos escalenos cadastrados: ', escaleno);
 
-console.log(triangulo);
-console.log('Aqui estão todos os triângulos equiláteros cadastrados: ', equilatero);
-console.log('Aqui estão todos os triângulos isósceles cadastrados: ', isosceles);
-console.log('Aqui estão todos os triângulos escalenos cadastrados: ', escaleno);
+    let input = prompt('Se deseja continuar, aperte a tecla ENTER. Caso deseje encerrar o cadastro basta digitar "Sair": ');
 
-let input = prompt('Se deseja continuar, aperte a tecla ENTER. Caso deseje encerrar o cadastro basta digitar "Sair": ');
-
-if (input == 'Sair') {
-    process.exit();
-}
+    if (input == 'Sair') {
+        process.exit();
+    }
 }
